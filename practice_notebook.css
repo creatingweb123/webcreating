@@ -1,0 +1,24 @@
+body{
+    background-color: black;
+}
+div{
+    margin:20px;
+}
+#dog{
+    width:100%;
+    border:5px solid white;
+}
+#a{
+    margin: 10px;
+    color: gold;
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Libre Baskerville', serif;
+}
+#b{
+    margin-top: 0;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Libre Baskerville', serif;
+}
