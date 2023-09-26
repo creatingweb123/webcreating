@@ -1,26 +1,72 @@
-<!doctype html>
-<html>
-<head>
-  <title>WEB1-WELCOME</title>
-  <meta target charset="utf-8">
-</head>
-<body>
-  <h1><a href = "index.html">WEB</a></h1>
-  <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JAVASCRIPT</a></li>
-  </ol>
-  <h2>WEB</h2>
-  <p>The World Wide Web (WWW), commonly known as the Web, is an information
-    system where documents and other web resources are identified by Uniform
-    Resource Locators, which may be interlinked by hypertext, and are
-    accessible over the Internet.[1][2] The resources of the Web are
-    transferred via the Hypertext Transfer Protocol (HTTP) and may be accessed
-    by users by a software application called a web browser and are published
-    by a software application called a web server. The World Wide Web is not
-    synonymous with the Internet, which pre-existed the Web in some form by
-    over two decades and upon whose technologies the Web is built.</p>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    .container{
+      display :grid;
+      width   :720px;
+      height  :720px;
+      background-color: #F0F1EC;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 155px 20px;
+    }
+    .container>div{
+      background-color: #F0F1EC;
+    }
+    .container>.one{
+      border-right: 9px solid black;
+      border-bottom: 9px solid black ;
+      background-color: #E72F24;
+    }
+    .two{
+      border-bottom: 9px solid black ;
+      grid-column: span 3;
+    }
+    .three{
+      border-bottom: 9px solid black ;
+      border-right: 9px solid black ;
+      grid-row: span 2;
+    }
+    .four{
+      border-bottom: 9px solid black ;
+      border-right: 9px solid black ;
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+    .container>.five{
+      background-color: #004592;
+      border-bottom: 10px solid black ;
+    }
+    .seven{
+      border-right: 9px solid black ;
+    }
+    .container>.eight{
+      background-color: #F9D01E;
+    }
+    .container>.nine{
+      background-color: black;
+      border-right: 9px solid black ;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+  <div class="container">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+    <div class="six"></div>
+    <div class="seven"></div>
+    <div class="eight"></div>
+    <div class="nine"></div>
+  </div>
 </body>
+
 </html>
