@@ -8,8 +8,8 @@ var dice1 = dices[0];
 dice1.setAttribute("src","./images/dice"+number1+".png");
 
 var dice2 = dices[1]
-dice2.src = "./images/dice"+number2+".png";
-// dice2.setAttribute("src","./images/dice"+number2+".png");
+// dice2.src = "./images/dice"+number2+".png";
+dice2.setAttribute("src","./images/dice"+number2+".png");
 
 // var h1 = document.getElementsByTagName("h1")[0];
 var h1 = document.querySelector("h1");
