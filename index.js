@@ -1,5 +1,17 @@
 var numberOfDrumButton = document.querySelectorAll(".drum");
 
+for(var i=0;i<numberOfDrumButton.length;i++){
+    document.querySelectorAll("button")[i].addEventListener("click", function () { 
+      drum_key(this.innerHTML);
+      buttonAnimation(this.innerHTML);
+      });
+}
+
+document.addEventListener("keydown", function (event) {
+  drum_key(event.key);
+  buttonAnimation(event.key);
+  });
+
 function drum_key(buttonInntertext){
   switch (buttonInntertext) {
     case 'w':
@@ -27,18 +39,15 @@ function drum_key(buttonInntertext){
       console.log("wrong button");
   }
   audio1.play();
+  //audio1.loop = false; // 반복재생하지 않음
+  //audio1.volume = 0.5; // 음량 설정
+  //audio1.play(); // sound1.mp3 재생
 }
 
-for(var i=0;i<numberOfDrumButton.length;i++){
-    document.querySelectorAll("button")[i].addEventListener("click", function () {
-      var buttonInntertext = this.innerHTML;  
-      drum_key(buttonInntertext);
-      //audio1.loop = false; // 반복재생하지 않음
-      //audio1.volume = 0.5; // 음량 설정
-      //audio1.play(); // sound1.mp3 재생
-      });
+function buttonAnimation(current_key){
+  var activeButton = document.querySelector("."+current_key);
+  activeButton.classList.add("pressed");
+  setTimeout(function(){
+    activeButton.classList.remove("pressed");
+  },700);
 }
-document.addEventListener("keydown", function (event) {
-  var buttonInntertext = event.key;  
-  drum_key(buttonInntertext);
-  });
