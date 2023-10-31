@@ -1,53 +1,22 @@
-var numberOfDrumButton = document.querySelectorAll(".drum");
+import express from "express";
 
-for(var i=0;i<numberOfDrumButton.length;i++){
-    document.querySelectorAll("button")[i].addEventListener("click", function () { 
-      drum_key(this.innerHTML);
-      buttonAnimation(this.innerHTML);
-      });
-}
+const app = express();
+const port = 3000;
+app.use(express.static("public"));
+app.use(express.urlencoded({extended:true}));
 
-document.addEventListener("keydown", function (event) {
-  drum_key(event.key);
-  buttonAnimation(event.key);
-  });
+app.get("/",(req,res)=>{
+  res.render("index.ejs")
+})
 
-function drum_key(buttonInntertext){
-  switch (buttonInntertext) {
-    case 'w':
-      var audio1 = new Audio("sounds/tom-1.mp3");
-      break;
-    case 'a':
-      var audio1 = new Audio("sounds/tom-2.mp3");
-      break;
-    case 's':
-      var audio1 = new Audio("sounds/tom-3.mp3");
-      break;
-    case 'd':
-      var audio1 = new Audio("sounds/tom-4.mp3");
-      break;
-    case 'j':
-      var audio1 = new Audio("sounds/crash.mp3");
-      break;
-    case 'k':
-      var audio1 = new Audio("sounds/kick-bass.mp3");
-      break;
-    case 'l':
-      var audio1 = new Audio("sounds/snare.mp3");
-      break;
-    default:
-      console.log("wrong button");
-  }
-  audio1.play();
-  //audio1.loop = false; // 반복재생하지 않음
-  //audio1.volume = 0.5; // 음량 설정
-  //audio1.play(); // sound1.mp3 재생
-}
+app.get('/contact',(req,res)=>{
+  res.render("contact.ejs");
+});
 
-function buttonAnimation(current_key){
-  var activeButton = document.querySelector("."+current_key);
-  activeButton.classList.add("pressed");
-  setTimeout(function(){
-    activeButton.classList.remove("pressed");
-  },700);
-}
+app.get('/about',(req,res)=>{
+  res.render("about.ejs");
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
